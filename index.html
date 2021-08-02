@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Store</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="script.js"></script>
+    <nav>
+        <h2>Komputer Store</h2>
+    </nav>
+</head>
+<body>
+
+    <div class="containers">
+        <div class="container-row">
+            <div class="container">
+                <h3 class="box-title">John Doe</h3>
+                <div class="container-sub-row">
+                    <h4 class="box-subheader">Balance:</h4>
+                    <h4 class ="box-subheader" id="customer-balance">13 337 SEK</h4>
+                </div>
+                <div class="container-sub-row" id="loan-div">
+                    <h4 class="box-subheader">Loan:</h4>
+                    <h4 class ="box-subheader" id="customer-loan-balance">13 337 SEK</h4>
+                </div>
+                <button class="get-loan-button" onclick=getALoan()>Get a loan</button>
+            </div>
+            <div class="container">
+                <h3 class="box-title">Work</h3>
+                <div class="container-sub-row">
+                    <h4 class="box-subheader">Pay:</h4>
+                    <h4 class="box-subheader" id="customer-pay">80 000 SEK</h4>
+                </div>
+                <div class="work-button-group">
+                    <button class="bank-button">Bank</button>
+                    <button class="work-button">Work</button>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="box-title">Laptops</h3>
+                <select class="laptop-dropdown" name="laptop-meny" id="laptop-meny">
+                    <option value="bla">Test laptop</option>
+                </select>
+                <h4 class="box-subheader">Features</h4>
+                <h5 class="laptop-description" id="laptop-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper tempus, morbi tellus arcu elementum.</h5>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="laptop-view">
+                <span class="iconify" data-inline="false" data-icon="fa-solid:laptop-code" style="font-size: 203px;"></span>
+                <div class="laptop-view-text">
+                    <h3 class="box-title" id="laptop-view-name">Placeholder laptop name</h3>
+                    <h5 class="laptop-description" id="laptop-view-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                </div>
+                <div class="laptop-view-button">
+                    <h3 class="laptop-view-price">22222 SEK</h3>
+                    <button class="get-loan-button">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
