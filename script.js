@@ -17,6 +17,7 @@ let laptopTitle;
 let laptopDescription;
 let laptopPrice;
 let laptopImg;
+let buyNowButton;
 
 window.onload = init;
 
@@ -33,10 +34,12 @@ function init(){
     laptopDescription = document.getElementById("laptop-view-description");
     laptopPrice = document.getElementById("laptop-view-price");
     laptopImg = document.getElementById("laptop-img")
+    buyNowButton = document.getElementById("buy-now-button")
     fetchAPIData();
     updateDOMLoanRow();
     updateDOMBalanceRow();
     updateDOMPayRow();
+    updateDOMOnLaptopSelect();
 }
 
 async function fetchAPIData(){
@@ -167,18 +170,29 @@ function updateDOMLaptopSelect(){
     });
 }
 function updateDOMOnLaptopSelect(){
-    const computer = computers.find(computer => computer.id == laptopSelect.value);
-    currentComputer = computer;
-    laptopFeatures.innerHTML = '';
-    computer.specs.forEach(feature => {
-        var li = document.createElement("li");
-        li.innerHTML = feature;
-        laptopFeatures.appendChild(li);
-    })
-
-    laptopTitle.innerHTML = computer.title;
-    laptopDescription.innerHTML = computer.description;
-    laptopPrice.innerHTML = computer.price + " SEK";
-    laptopImg.src = 'https://noroff-komputer-store-api.herokuapp.com/' + computer.image;
+    const currentComputer = computers.find(computer => computer.id == laptopSelect.value);
+    if(currentComputer !== undefined && currentComputer.id > 0){
+        laptopFeatures.innerHTML = '';
+        currentComputer.specs.forEach(feature => {
+            var li = document.createElement("li");
+            li.innerHTML = feature;
+            laptopFeatures.appendChild(li);
+        })
+    
+        laptopTitle.innerHTML = currentComputer.title;
+        laptopDescription.innerHTML = currentComputer.description;
+        laptopPrice.innerHTML = currentComputer.price + " SEK";
+        laptopImg.style.display = "initial"
+        laptopImg.src = 'https://noroff-komputer-store-api.herokuapp.com/' + currentComputer.image;
+        buyNowButton.style.display = "initial";
+    }
+    else{
+        laptopTitle.innerHTML = '';
+        laptopDescription.innerHTML = '';
+        laptopPrice.innerHTML = '';
+        laptopImg.style.display = "none";
+        buyNowButton.style.display = "none";
+        console.log("else triggered")
+    }
 
 }

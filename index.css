@@ -27,9 +27,10 @@ h2 {
 }
 .container {
   width: 30%;
-  height: 100%;
   background-color: #d9d9d9;
   border-radius: 2em;
+  height: inherit;
+  justify-content: space-between;
 }
 .container > * {
   align-self: center;
@@ -44,6 +45,7 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   padding: 0;
+  min-width: 80%;
 }
 .container-row:first-of-type {
   margin-top: 10%;
@@ -74,7 +76,7 @@ h2 {
 }
 .get-loan-button {
   background-color: white;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   color: #5f5f5f;
   border-radius: 2em;
@@ -88,19 +90,21 @@ h2 {
   padding-right: 2em;
   padding-left: 2em;
   cursor: pointer;
+  max-height: 20%;
 }
 .work-button-group {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 10%;
+  margin-top: 10%;
   justify-content: space-between;
 }
 .bank-button {
   background-color: white;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   color: #5f5f5f;
   border-radius: 2em;
@@ -108,21 +112,23 @@ h2 {
   padding-right: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  min-height: 20%;
   border: 0;
+  border-radius: 2em;
+  height: 40%;
+  width: 40%;
   cursor: pointer;
 }
 .work-button {
   background-color: transparent;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   color: black;
-  margin-top: 2%;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
-  max-height: 10%;
+  height: 40%;
+  width: 40%;
   border: 2px, 2px;
   border-color: black;
   border-style: solid;
@@ -132,31 +138,30 @@ h2 {
 .repay-button {
   display: none;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   color: black;
   border-radius: 2em;
   margin-top: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-bottom: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
   padding-top: 1%;
   padding-bottom: 1%;
-  max-height: 1.6em;
-  margin: 0.5em;
-  margin-left: 4.8em;
   border: 1px, 1px;
   border-color: black;
   border-style: solid;
   cursor: pointer;
 }
 .laptop-dropdown {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 22%;
+  margin-right: 22%;
   border-radius: 0.5em;
-  font-size: 20px;
+  font-size: 15px;
+  text-align: center;
   font-family: "Roboto", sans-serif;
   color: #5f5f5f;
-  max-width: 90%;
+  max-width: 60%;
   cursor: context-menu;
 }
 .laptop-description {
@@ -167,12 +172,11 @@ h2 {
 }
 .laptop-view {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: flex-start;
   background-color: #d9d9d9;
-  padding: 2em;
-  margin-top: 0em;
-  min-width: 93%;
+  padding: 8%;
   border-radius: 2em;
   justify-content: space-between;
 }
@@ -192,10 +196,16 @@ h2 {
   width: 35%;
 }
 ul {
-  list-style: none;
+  margin-left: 20%;
+  margin-right: 20%;
+  list-style: circle;
   font-family: "Roboto", sans-serif;
   color: #6d6d6d;
   font-size: 15px;
+}
+li {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 @media (max-width: 1000px) {
@@ -207,5 +217,12 @@ ul {
   .container-row > * {
     width: 90%;
     margin-top: 15%;
+  }
+  .laptop-view {
+    width: 80%;
+  }
+  .repay-button {
+    margin-left: 33%;
+    margin-right: 33%;
   }
 }
