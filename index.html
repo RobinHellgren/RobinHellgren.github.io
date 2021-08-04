@@ -29,38 +29,41 @@
                     <h4 class="box-subheader">Loan:</h4>
                     <h4 class ="box-subheader" id="customer-loan-balance">13 337 SEK</h4>
                 </div>
-                <button class="get-loan-button" onclick=getALoan()>Get a loan</button>
+                <button class="get-loan-button" id="get-loan-button" onclick=getALoan()>Get a loan</button>
             </div>
             <div class="container">
                 <h3 class="box-title">Work</h3>
                 <div class="container-sub-row">
                     <h4 class="box-subheader">Pay:</h4>
-                    <h4 class="box-subheader" id="customer-pay">80 000 SEK</h4>
+                    <h4 class="box-subheader" id="customer-pay"></h4>
                 </div>
                 <div class="work-button-group">
-                    <button class="bank-button">Bank</button>
-                    <button class="work-button">Work</button>
+                    <button class="bank-button" onclick="bankPay()">Bank</button>
+                    <button class="work-button" onclick="work()">Work</button>
                 </div>
+                <button class="repay-button" id="repay-button" onclick="repayLoan()">Repay loan</button>
             </div>
             <div class="container">
                 <h3 class="box-title">Laptops</h3>
-                <select class="laptop-dropdown" name="laptop-meny" id="laptop-meny">
-                    <option value="bla">Test laptop</option>
+                <select class="laptop-dropdown" name="laptop-meny" id="laptop-menu" onchange="updateDOMOnLaptopSelect()">
+                    <option value="0">Select laptop</option>
                 </select>
                 <h4 class="box-subheader">Features</h4>
-                <h5 class="laptop-description" id="laptop-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper tempus, morbi tellus arcu elementum.</h5>
+                <ul id="laptop-features">
+
+                </ul>
             </div>
         </div>
         <div class="container-row">
             <div class="laptop-view">
-                <span class="iconify" data-inline="false" data-icon="fa-solid:laptop-code" style="font-size: 203px;"></span>
+                <img src="" alt="" id="laptop-img" class="laptop-img">
                 <div class="laptop-view-text">
-                    <h3 class="box-title" id="laptop-view-name">Placeholder laptop name</h3>
-                    <h5 class="laptop-description" id="laptop-view-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                    <h3 class="box-title" id="laptop-view-name"></h3>
+                    <h5 class="laptop-description" id="laptop-view-description"></h5>
                 </div>
                 <div class="laptop-view-button">
-                    <h3 class="laptop-view-price">22222 SEK</h3>
-                    <button class="get-loan-button">Buy Now</button>
+                    <h3 class="laptop-view-price" id="laptop-view-price"></h3>
+                    <button class="get-loan-button" onclick="buyLaptop()">Buy Now</button>
                 </div>
             </div>
         </div>
